@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import { React, useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Routes
+import Home from './pages/Home';
+import AuthGuard from './AuthGuard';
 import './App.css';
+import Waiting from './pages/Waiting';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-bg'>
+      <Router>
+        <Routes>
+          <Route path="/" element={<AuthGuard><Home /></AuthGuard>} />
+          <Route path="/waiting-room" element={<AuthGuard><Waiting /></AuthGuard>} />
+          {/* <Route path="/new-split" element={<AuthGuard><NewSplit /></AuthGuard>} />
+          <Route path="/view-history" element={<AuthGuard><ViewHistory /></AuthGuard>} />
+          <Route path="/summary" element={<AuthGuard><Summary /></AuthGuard>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/chat" element={<AuthGuard><ChatComponent /></AuthGuard>} />
+          <Route path="/unpublished" element={<AuthGuard><PublishSplits /></AuthGuard>} /> */}
+        </Routes>
+      </Router>
+      {/* <ToastContainer /> */}
     </div>
   );
 }

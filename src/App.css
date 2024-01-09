@@ -22,10 +22,11 @@
   }
 }
 
-/* .input-code-hide {
-  visibility: hidden;
-  width: 0;
-} */
+.input-code-login {
+  height: 80px;
+  width: 80vw;
+  font-size: 50px;
+}
 
 .code-element {
   height: 100px;

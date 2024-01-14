@@ -103,7 +103,7 @@ export default function Home() {
         }
       ).then(() => {
         localStorage.setItem('v1:gmaeInfo', JSON.stringify({ gameId: newCode }))
-        navigate('/waiting-room')
+        navigate('/waiting-room/' + newCode)
       }).catch((error) => {
         console.log(error);
       });
@@ -120,7 +120,7 @@ export default function Home() {
     onValue(cartRef, (snapshot) => {
       if (localStorage.getItem('v1:gmaeInfo')) {
         localStorage.setItem('v1:gmaeInfo', JSON.stringify({ gameId: roomId }))
-        navigate('/waiting-room')
+        navigate('/waiting-room/' + roomId)
         return;
       }
       const data = snapshot.val();
@@ -132,11 +132,11 @@ export default function Home() {
             ...data,
             players: [
               ...data.players,
-              { name: JSON.parse(localStorage.getItem('v1:userInfo')).name, score: 0, role: null, isActive: true, isReady: false, host:false },
+              { name: JSON.parse(localStorage.getItem('v1:userInfo')).name, score: 0, role: null, isActive: true, isReady: false, host: false },
             ],
           }
         ).then(() => {
-          navigate('/waiting-room')
+          navigate('/waiting-room/' + roomId)
         }).catch((error) => {
           console.log(error);
         });

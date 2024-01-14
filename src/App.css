@@ -46,6 +46,10 @@ input::-webkit-inner-spin-button {
   background-color: #d9d9d9a8 !important;
 }
 
+.bg-off-white {
+  background-color: #d9d9d9a8 !important;
+}
+
 .height-card-full {
   height: 65vh;
 }
@@ -107,4 +111,25 @@ input[type="checkbox"]:checked::before {
   height: 14px;
   background-color: red;
   border-radius: 50%;
+}
+
+/* Game.css */
+
+/* Make the content scrollable without showing the scrollbar */
+.custom-scrollbar {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent; /* Set the colors to be transparent */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
 }

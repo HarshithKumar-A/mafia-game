@@ -21,3 +21,19 @@ code {
   pointer-events: none;
   cursor: not-allowed;
 }
+
+.font-10 {
+ font-size: 10px;
+}
+
+.font-12 {
+  font-size: 12px;
+ }
+
+.flex-1 {
+  flex: 1;
+}
+
+.border-radius-15 {
+  border-radius: 15px;
+}
